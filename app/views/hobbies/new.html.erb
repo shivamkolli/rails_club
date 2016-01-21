@@ -1,0 +1,18 @@
+<h2>User Hobbies</h2>
+
+<%= form_tag(user_hobbies_path,:method => 'post') %>
+
+<tr>
+<td>Hobby Type : </td>
+<td><%=text_field_tag "hobby[hobby_name]",@hobby.hobby_name %></td>
+</tr>
+
+<tr>
+<td>Since From : </td>
+<td><%=text_field_tag "hobby[since_from]",@hobby.since_from %></td>
+</tr>
+
+<tr>
+<td><%= submit_tag nil, :class => "form_submit"%></td>
+</tr>
+

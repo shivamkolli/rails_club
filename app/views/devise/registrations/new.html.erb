@@ -1,0 +1,44 @@
+<h2>Sign up</h2>
+
+<%= form_tag(user_registration_path,:method => 'post', multipart: true) %>
+<%= devise_error_messages! %>
+<%= file_field_tag "user[avatar]", as: :file %>
+
+<table>
+
+<tr>
+<td>Username : </td>
+<td><%=text_field_tag "user[username]",@user.username %></td>
+</tr>
+
+<tr>
+<td>Email : </td>
+<td><%=email_field_tag "user[email]",@user.email %></td>
+</tr>
+
+<tr>
+<td>Password : </td>
+<td><%=password_field_tag "user[password]",@user.password %></td>
+</tr>
+
+<tr>
+<td>Retype password : </td>
+<td><%=password_field_tag "user[password_confirmation]",@user.password_confirmation %></td>
+</tr>
+
+<tr>
+<td>Mobile : </td>
+<td><%=text_field_tag "user[mobile]" ,@user.mobile %></td>
+</tr>
+
+<tr>
+<td>Address : </td>
+<td><%=text_area_tag "user[address]" ,@user.address ,:rows => 10, :cols => 25 %></td>
+</tr>
+
+<tr>
+<td><%= submit_tag nil, :class => "form_submit"%></td>
+</tr>
+</table>
+<br />5 errors prohibited this user from being saved
+<%= render :partial => "devise/shared/links" %>
